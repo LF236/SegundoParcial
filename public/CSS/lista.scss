@@ -1,0 +1,44 @@
+//Importamos fuentes
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+//Declaración de variables locales
+$fontMain: "Roboto", sans-serif;
+$firstColor: #007bdf;
+$firstColorStrong: #006dc6;
+$secondColor: #00cbff;
+$thirdColor: #ff3c32;
+$thirdColorStrong: #ff2419;
+$fourthColor: #2bd480;
+$bodyColor: #d1d1d1;
+
+main {
+    font-family: $fontMain;
+    user-select: none;
+    .listaMensajes {
+        width: 90%;
+        margin: auto;
+        //background-color: rebeccapurple;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        article {
+            background: $firstColor;
+            width: 48%;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            font-weight: 700;
+            
+            span {
+                font-weight: normal;
+                margin-left: 10px;
+                display: inline-block;
+            }
+        }
+
+        @media (min-width: 720px) {
+            article {
+               width: 30%;
+            }
+        }
+    }
+}

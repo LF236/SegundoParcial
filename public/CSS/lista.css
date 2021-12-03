@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+main {
+  font-family: "Roboto", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main .listaMensajes {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .listaMensajes article {
+  background: #007bdf;
+  width: 48%;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-weight: 700;
+}
+
+main .listaMensajes article span {
+  font-weight: normal;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+@media (min-width: 720px) {
+  main .listaMensajes article {
+    width: 30%;
+  }
+}
+/*# sourceMappingURL=lista.css.map */

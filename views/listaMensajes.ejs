@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head import -->
+    <%- include('./partials/head.ejs'); %>
+    <title>Lista de Mensajes</title>
+    <link rel="stylesheet" href="/CSS/lista.css">
+    
+</head>
+<body>
+    <!-- Header import -->
+    <%- include('./partials/header.ejs'); %>
+    <main>
+        <section class="listaMensajes">
+            <% if(listaMensajes.length == 0) { %> 
+                <p>Sin Mensajes Registrados</p>
+            <% } %> 
+            <% if(listaMensajes.length > 0) { %> 
+                <% listaMensajes.map(mensaje => { %> 
+                    <article>
+                        <p>Usuario: <span> <%= mensaje.nombre %>  </span></p>
+                        <p>Mensaje: <span> <%= mensaje.mensaje %>  </span></p>
+                    </article>
+                <% }) %> 
+            <% } %> 
+            
+        </section>
+        
+    </main>
+    <script src="/js/verificarFormularioEnvio.js"></script>
+    <!-- Footer import -->
+    <%- include('./partials/footer.ejs'); %>
+</body>
+</html>

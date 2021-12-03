@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head import -->
+    <%- include('./partials/head.ejs'); %>
+    <title>Enviar Mensaje</title>
+    <link rel="stylesheet" href="/CSS/formularios.css">
+</head>
+<body>
+    <!-- Header import -->
+    <%- include('./partials/header.ejs'); %>
+    <main>
+        <!-- Lista de empleados -->
+        <div class="formulario-eliminar-cancelar">
+            <h2>Deja un Mensaje</h2>
+            <h2 id="error-message">Mensaje Error</h2>
+            <form method="POST" action="/enviarMensaje">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre"
+                    value="<%= nombre ? nombre : "" %> " 
+                >
+                <label for="correo">Correo</label>
+                <input type="email" name="correo" id="correo" value="<%= email ? email : "" %> ">
+                <label for="mensaje">Mensaje a Enviar</label>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+                <div class="buttons">
+                    <label for="btn-send" class="btn-send" id="enviarMensaje">Enviar</label>
+                    <button type="submit" id="btn-send"></button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/js/verificarFormularioEnvio.js"></script>
+    <!-- Footer import -->
+    <%- include('./partials/footer.ejs'); %>
+</body>
+</html>
