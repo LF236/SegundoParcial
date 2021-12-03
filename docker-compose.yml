@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+    
+    app:
+        build:
+            context: .
+            dockerfile: DockerFile
+        ports:
+            - ${PORT_API_EXPRESS}:4000
+        volumes:
+            - .:/app
+            - ./node_modules:/app/node_modules/
+        depends_on:
+            - mysql_server
+    
+    mysql_server:
+        image: mysql
+        ports:
+            - ${PORT_MYSQL}:3306
+        volumes:
+            - ./dbdata:/var/lib/mysql
+        container_name: dbExamen
+        environment:
+            MYSQL_HOST: ${HOST}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}
+            MYSQL_ROOT_PASSWORD: root
+            
+networks:
+    some-net:
+        driver: bridge
